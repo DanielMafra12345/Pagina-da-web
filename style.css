@@ -1,114 +1,162 @@
-/* ===== Estilo geral ===== */
+/* ===========================
+   FONTE HK MODULAR
+   =========================== */
+
+@font-face {
+    font-family: 'HK Modular';
+    src: url('fonts/HKModular.woff2') format('woff2'),
+         url('fonts/HKModular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* ===========================
+   RESET
+   =========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===========================
+   FUNDO ANIMADO NEON
+   =========================== */
 
 body {
-    font-family: Arial, sans-serif;
-    background: #f2f5f8;
-    margin: 0;
+    font-family: 'HK Modular', Arial, sans-serif;
+    background: linear-gradient(120deg, #ff00ff, #00eaff, #00ff6a, #fffb00, #ff0077);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+    color: #ffffff;
     padding: 20px;
-    display: flex;
-    justify-content: center;
 }
 
-.site-wrap {
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
+
+/* ===========================
+   TÍTULO PRINCIPAL
+   =========================== */
 
 h1 {
     text-align: center;
-    margin: 8px 0;
-    color: #333;
+    color: #ffffff;
+    font-size: 2.8rem;
+    text-shadow: 0 0 18px #ff00ff, 0 0 30px #ff00ff;
+    margin-bottom: 25px;
 }
 
-.lead {
+/* ===========================
+   PARÁGRAFO INTRODUTÓRIO
+   =========================== */
+
+p {
     text-align: center;
-    margin-bottom: 24px;
-    color: #444;
+    font-size: 1.3rem;
+    color: #ffeefc;
+    margin-bottom: 25px;
 }
 
-/* ===== Cards ===== */
+/* ===========================
+   LISTA DAS LINGUAGENS
+   =========================== */
 
-.card-container {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
+ul {
+    list-style: none;
+    margin: auto;
+    max-width: 350px;
 }
+
+li {
+    background: #ffffff22;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 12px;
+    margin: 12px 0;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    transition: 0.25s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 0 12px #ffffff33;
+}
+
+/* Efeito neon explosão */
+li:hover {
+    transform: translateY(-6px) scale(1.05);
+    border-color: #fff;
+    box-shadow: 
+        0 0 12px #ff00ea,
+        0 0 20px #00eaff,
+        0 0 28px #fffb00,
+        0 0 40px #00ff6a;
+}
+
+/* ===========================
+   CARDS FUTURISTAS NEON
+   =========================== */
 
 .card {
-    background: #ffffff;
-    width: 300px;
-    padding: 18px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
-    transition: transform 0.2s;
+    background: #ffffff15;
+    border: 2px solid #ffffff55;
+    border-radius: 18px;
+    padding: 25px;
+    margin: 40px auto;
+    max-width: 800px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 25px #ffffff33;
+    transition: 0.3s ease;
 }
 
+/* Hover neon explosivo */
 .card:hover {
-    transform: scale(1.05);
+    border-color: #fff;
+    box-shadow:
+        0 0 20px #ff00ff,
+        0 0 35px #00eaff,
+        0 0 50px #fffb00,
+        0 0 60px #00ff6a;
+    transform: translateY(-6px);
 }
-
-/* ===== Títulos dentro dos cards ===== */
 
 .card-title {
-    font-size: 20px;
-    font-weight: bold;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    border-left: 5px solid #4CAF50; /* padrão */
-    color: #222;
+    font-size: 1.8rem;
+    color: #00f7ff;
+    text-shadow: 0 0 14px #00f7ff;
+    margin-bottom: 12px;
 }
-
-/* ===== Cores diferentes por linguagem ===== */
-
-.card--blocos .card-title {
-    border-left-color: #FF7A59;
-}
-
-.card--python .card-title {
-    border-left-color: #1E88E5;
-}
-
-.card--js .card-title {
-    border-left-color: #FFB300;
-}
-
-/* ===== Texto dentro do card ===== */
 
 .card-text {
-    color: #555;
-    font-size: 15px;
-    line-height: 1.4;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #f9f9f9;
 }
 
-/* ===== Responsivo ===== */
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
 
-@media (max-width: 640px) {
-    .card {
-        width: 100%;
-        max-width: 500px;
-    }
-}
-
-/* ===== Dark Mode automático ===== */
-@media (prefers-color-scheme: dark) {
-    body {
-        background: #0b1320;
-        color: #e6eef8;
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2.2rem;
     }
 
     .card {
-        background: #071127;
-        border: 1px solid rgba(255,255,255,0.15);
-        box-shadow: none;
+        padding: 18px;
+        margin: 25px;
+    }
+
+    li {
+        font-size: 1.05rem;
     }
 
     .card-title {
-        color: #fff;
-    }
-
-    .card-text {
-        color: #c7d5e7;
+        font-size: 1.5rem;
     }
 }
+

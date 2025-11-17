@@ -3,12 +3,14 @@
    =========================== */
 
 @font-face {
-    font-family: 'HK Modular';
-    src: url('fonts/HKModular.woff2') format('woff2'),
-         url('fonts/HKModular.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'HK Modular';
+  src: url('fonts/HKModular.woff2') format('woff2'),
+       url('fonts/HKModular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
+body { font-family: 'HK Modular', Arial, sans-serif; }
+
 
 /* ===========================
    RESET

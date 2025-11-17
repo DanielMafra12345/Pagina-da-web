@@ -1,0 +1,114 @@
+/* ===== Estilo geral ===== */
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f5f8;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.site-wrap {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+h1 {
+    text-align: center;
+    margin: 8px 0;
+    color: #333;
+}
+
+.lead {
+    text-align: center;
+    margin-bottom: 24px;
+    color: #444;
+}
+
+/* ===== Cards ===== */
+
+.card-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #ffffff;
+    width: 300px;
+    padding: 18px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.10);
+    transition: transform 0.2s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Títulos dentro dos cards ===== */
+
+.card-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-left: 5px solid #4CAF50; /* padrão */
+    color: #222;
+}
+
+/* ===== Cores diferentes por linguagem ===== */
+
+.card--blocos .card-title {
+    border-left-color: #FF7A59;
+}
+
+.card--python .card-title {
+    border-left-color: #1E88E5;
+}
+
+.card--js .card-title {
+    border-left-color: #FFB300;
+}
+
+/* ===== Texto dentro do card ===== */
+
+.card-text {
+    color: #555;
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+/* ===== Responsivo ===== */
+
+@media (max-width: 640px) {
+    .card {
+        width: 100%;
+        max-width: 500px;
+    }
+}
+
+/* ===== Dark Mode automático ===== */
+@media (prefers-color-scheme: dark) {
+    body {
+        background: #0b1320;
+        color: #e6eef8;
+    }
+
+    .card {
+        background: #071127;
+        border: 1px solid rgba(255,255,255,0.15);
+        box-shadow: none;
+    }
+
+    .card-title {
+        color: #fff;
+    }
+
+    .card-text {
+        color: #c7d5e7;
+    }
+}
